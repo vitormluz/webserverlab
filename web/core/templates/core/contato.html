@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+    <div class="container">
+        <h1>Contato</h1>
+        {% bootstrap_messages %}
+
+        <form action={% url 'contato' %} method='POST' class="form" autocomplete="on">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            {% bootstrap_button button_type="submit" content="Enviar mensagem" %}
+        </form>
+    </div>
+{% endblock content %}

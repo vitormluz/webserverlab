@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+{% for usuario in usuarios %}
+<hr>
+<p>{{ usuario.username }}</p>
+<p>{{ usuario.password }}</p>
+<hr>
+{% endfor %}
+{% endblock content %}

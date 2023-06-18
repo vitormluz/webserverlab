@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+    <div class="container">
+        <h1>Produtos</h1>
+        <form action="{% url 'produto' %}" method="POST" autocomplete="off" class="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_messages %}
+
+            {% bootstrap_form form %}
+            {% bootstrap_button button_type="submit" content="Cadastrar" %}
+        </form>
+    </div>
+{% endblock content %}

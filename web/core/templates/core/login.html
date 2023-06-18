@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+    <div class="container">
+        <h1>Login</h1>
+        <form action="{% url 'login' %}" method="POST" class="form">
+            {% csrf_token %}
+            {% bootstrap_messages %}
+
+            {% bootstrap_form form %}
+            {% bootstrap_button button_type="submit" content="Entrar" %}
+        </form>
+        <li><a href="{% url 'cadastro' %}">Não tem uma conta?</a></li>
+    </div>
+{% endblock content %}

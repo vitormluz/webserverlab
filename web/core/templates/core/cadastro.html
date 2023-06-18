@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+    <div class="container">
+        <h1>Cadastro de Usuário</h1>
+        <form action="{% url 'cadastro' %}" method="POST" autocomplete="off" class="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_messages %}
+
+            {% bootstrap_form form %}
+            {% bootstrap_button button_type="submit" content="Cadastrar" %}
+        </form>
+        <li><a href="{% url 'login' %}">Já tem uma conta?</a></li>
+    </div>
+{% endblock content %}
